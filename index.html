@@ -684,6 +684,8 @@
     function buildPayload(fields){
       return getIP().then(function(ip){
         var payload=Object.assign({pagina:PAGINA,ip:ip},fields,mergeUTMs(),{timestamp:new Date().toISOString()});
+        // A planilha da Thermolux lê a conta na coluna conta_mensal; hero/modal só tinham conta_luz.
+        if(!payload.conta_mensal&&payload.conta_luz)payload.conta_mensal=payload.conta_luz;
         setCookie(PFX+'lead',JSON.stringify({nome:fields.nome,telefone:fields.telefone,cidade:fields.cidade}),30);
         return payload;
       });
