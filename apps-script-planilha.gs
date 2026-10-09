@@ -24,14 +24,13 @@ var SHEET_NAME = 'Leads'; // aba; criada automaticamente se não existir
 
 // Cabeçalho desejado (usado se a aba estiver vazia; o que faltar é acrescentado no fim).
 var COLS = [
-  'recebido_em','timestamp','form_type','pagina','nome','telefone','cidade','conta_luz','conta_mensal','economia_estimada','tipo_projeto',
-  'ip','clickup_client_id',
-  'utm_source','utm_medium','utm_campaign','utm_content','utm_term',
-  'gclid','gbraid','wbraid','fbclid',
-  // atribuição de anúncio (Google: IDs + palavra-chave que casou · Meta: nomes)
-  'campanha_id','grupo_id','anuncio_id','keyword','match_type','rede','device',
-  'ad_campaign','ad_conjunto','ad_nome',
-  'page_url','page_referer','landing_url'
+  // visíveis
+  'recebido_em','nome','telefone','cidade','conta_mensal','tipo_projeto','economia_estimada',
+  'form_type','utm_campaign','keyword','device','utm_source','utm_medium',
+  // grupo recolhido (rastreamento técnico)
+  'gclid','gbraid','wbraid','campanha_id','grupo_id','anuncio_id','match_type','rede',
+  'utm_term','utm_content','fbclid','ad_campaign','ad_conjunto','ad_nome',
+  'landing_url','page_url','page_referer','ip','timestamp','pagina','clickup_client_id','conta_luz'
 ];
 
 function doPost(e) {
